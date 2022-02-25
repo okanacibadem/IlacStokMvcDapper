@@ -1,0 +1,46 @@
+﻿@model IEnumerable<IlacStokMvcDapper.Models.ILACLARTBLMODEL>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EYI")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ILACADI)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ILACFIYAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ILACADET)
+        </th>
+     
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ILACADI)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ILACFIYAT)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ILACADET)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "EYI", new {id=item.ILACNO }) |
+        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Delete", "Delete", new {  id=item.ILACNO })
+    </td>
+</tr>
+}
+
+</table>

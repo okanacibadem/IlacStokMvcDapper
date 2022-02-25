@@ -1,0 +1,51 @@
+﻿@model IEnumerable<IlacStokMvcDapper.Models.MUMESSILTBL>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EYM")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ADSOYAD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HEDEFSATIS)
+        </th>
+           <th>
+            @Html.DisplayNameFor(model => model.BOLGE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MUDUR)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ADSOYAD)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HEDEFSATIS)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BOLGE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MUDUR)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "EYM", new { id=item.MUMESSILNO }) |
+        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MUMESSILNO })
+    </td>
+</tr>
+}
+
+</table>
